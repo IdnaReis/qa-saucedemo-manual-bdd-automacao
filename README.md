@@ -79,6 +79,12 @@ Os **mesmos arquivos Gherkin** usados nos testes manuais (`bdd/`) são executado
 
 Os testes de regressão são marcados como **falha esperada (xfail)** enquanto o bug existir. Se um bug for corrigido, o teste aparece como **XPASS** no relatório, avisando que o cenário pode virar um teste comum.
 
+### 🎬 Demonstração
+
+Os testes rodando no navegador: compra completa, login e o BUG-009 reproduzido automaticamente.
+
+https://github.com/user-attachments/assets/4eb84d5a-2fe7-43b7-bc34-505007ce3102
+
 ### ▶️ Como executar
 
 ```bash
