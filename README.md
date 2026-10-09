@@ -72,8 +72,8 @@ Além dos casos roteirizados, foram feitos **testes exploratórios** com `standa
 ## 📂 Estrutura
 
 ```
-qa-testes-manuais-saucedemo/
-├── docs/plano-de-testes.md          # Objetivo, escopo, estratégia, critérios
+qa-saucedemo-manual-bdd-automacao/
+├── docs/plano-de-testes.mdqa-saucedemo-manual-bdd-automacao          # Objetivo, escopo, estratégia, critérios
 ├── casos-de-teste/casos-de-teste.md # 15 casos com passos e resultado esperado
 ├── bdd/                             # Cenários Gherkin por módulo + regressão dos bugs
 ├── execucao/relatorio-execucao.md   # Resultado de cada caso e dos exploratórios
