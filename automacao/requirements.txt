@@ -1,0 +1,4 @@
+pytest
+pytest-bdd>=8
+pytest-playwright
+pytest-html

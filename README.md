@@ -1,11 +1,16 @@
-# 🧾 Testes Manuais — SauceDemo
+# 🧾 SauceDemo — Testes Manuais, BDD e Automação
 
 ![Testes Manuais](https://img.shields.io/badge/Testes-Manuais-6C63FF?style=for-the-badge)
 ![BDD](https://img.shields.io/badge/BDD%20%2F%20Gherkin-23D96C?style=for-the-badge&logo=cucumber&logoColor=white)
 ![Casos](https://img.shields.io/badge/Casos-15%2F15%20passaram-2EA44F?style=for-the-badge)
 ![Bugs](https://img.shields.io/badge/Bugs%20encontrados-14-D73A49?style=for-the-badge)
+![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+[![Testes automatizados](https://github.com/IdnaReis/qa-saucedemo-manual-bdd-automacao/actions/workflows/testes.yml/badge.svg)](https://github.com/IdnaReis/qa-saucedemo-manual-bdd-automacao/actions/workflows/testes.yml)
 
-Projeto de testes manuais do e-commerce de prática [SauceDemo](https://www.saucedemo.com): planejamento, 15 casos de teste documentados, cenários em Gherkin, execução com evidências, **testes exploratórios com os 6 usuários do sistema** e **14 bugs reportados**.
+Projeto de testes manuais do e-commerce de prática [SauceDemo](https://www.saucedemo.com): planejamento, 15 casos de teste documentados, cenários em Gherkin, execução com evidências, **testes exploratórios com os 6 usuários do sistema** **14 bugs reportados** e **automação dos mesmos cenários Gherkin** com Playwright + Python.
+
+**Ciclo completo:** teste manual → documentação em BDD → automação dos mesmos `.feature` → regressão dos bugs → CI no GitHub Actions.
 
 ## 🎯 Escopo
 
@@ -63,6 +68,31 @@ Além dos casos roteirizados, foram feitos **testes exploratórios** com `standa
 | OBS-05 | Recibo em PDF sem número do pedido; nome do arquivo em UTC e conteúdo em horário local |
 | OBS-06 | `performance_glitch_user`: lentidão não reproduzida nesta execução (< 2 s) |
 
+## 🤖 Automação
+
+Os **mesmos arquivos Gherkin** usados nos testes manuais (`bdd/`) são executados automaticamente com **Playwright + pytest-bdd**, no padrão **Page Object Model**.
+
+| Suíte | Cenários | O que verifica |
+|---|---|---|
+| `test_funcionais.py` | 15 | Os casos CT01 a CT15 (login, catálogo, carrinho, checkout) |
+| `test_regressao_bugs.py` | 14 | Os bugs encontrados, descritos com o comportamento **correto** |
+
+Os testes de regressão são marcados como **falha esperada (xfail)** enquanto o bug existir. Se um bug for corrigido, o teste aparece como **XPASS** no relatório, avisando que o cenário pode virar um teste comum.
+
+### ▶️ Como executar
+
+```bash
+pip install -r automacao/requirements.txt
+playwright install chromium
+pytest
+```
+
+Relatório HTML gerado em `automacao/reports/relatorio.html`. Prints de falha em `automacao/test-results/`.
+
+### ⚙️ CI
+
+A cada push, o **GitHub Actions** roda toda a suíte e publica o relatório como artefato.
+
 ## 💡 Destaques
 
 - **Causa técnica identificada:** o BUG-009 foi rastreado até um `TypeError` no `onClick` do botão Finish, via Console do DevTools
@@ -78,13 +108,20 @@ qa-saucedemo-manual-bdd-automacao/
 ├── bdd/                             # Cenários Gherkin por módulo + regressão dos bugs
 ├── execucao/relatorio-execucao.md   # Resultado de cada caso e dos exploratórios
 ├── bugs/                            # 14 bug reports
-└── evidencias/                      # Prints, PDF e capturas do Console
+├── evidencias/                      # Prints, PDF e capturas do Console
+├── automacao/
+│   ├── pages/                       # Page Objects (login, produtos, carrinho, checkout)
+│   ├── tests/conftest.py            # Step definitions dos cenários Gherkin
+│   ├── tests/test_funcionais.py     # 15 cenários funcionais
+│   └── tests/test_regressao_bugs.py # 14 cenários de regressão (xfail)
+├── .github/workflows/testes.yml     # CI no GitHub Actions
+└── pytest.ini
 ```
 
 ## 🚀 Próximos Passos
 
-- Automatizar os cenários Gherkin com Playwright + Python (pytest-bdd)
-- Transformar os bugs em testes de regressão automatizados (`bdd/bugs-encontrados.feature`)
+- Teste de tempo de resposta para o `performance_glitch_user`
+- Execução em múltiplos navegadores (Chromium, Firefox, WebKit)
 
 ## 👩‍💻 Autora
 

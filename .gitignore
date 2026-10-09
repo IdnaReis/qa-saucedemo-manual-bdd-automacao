@@ -1,1 +1,6 @@
-﻿*.zip
+*.zip
+.pytest_cache/
+.venv/
+__pycache__/
+automacao/reports/
+automacao/test-results/
