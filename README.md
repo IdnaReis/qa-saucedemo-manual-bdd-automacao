@@ -102,7 +102,7 @@ A cada push, o **GitHub Actions** roda toda a suíte e publica o relatório como
 ## 📂 Estrutura
 
 ```
-- 🧾 [qa-saucedemo-manual-bdd-automacao](https://github.com/IdnaReis/qa-saucedemo-manual-bdd-automacao) — Ciclo completo de QA no SauceDemo: 15 casos manuais, 14 bugs com evidências, BDD/Gherkin automatizado com Playwright + Python e CI/
+qa-saucedemo-manual-bdd-automacao/
 ├── docs/plano-de-testes.md          # Objetivo, escopo, estratégia, critérios
 ├── casos-de-teste/casos-de-teste.md # 15 casos com passos e resultado esperado
 ├── bdd/                             # Cenários Gherkin por módulo + regressão dos bugs
