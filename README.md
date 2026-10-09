@@ -6,9 +6,9 @@
 ![Bugs](https://img.shields.io/badge/Bugs%20encontrados-14-D73A49?style=for-the-badge)
 ![Playwright](https://img.shields.io/badge/Playwright-2EAD33?style=for-the-badge&logo=playwright&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-[![Testes automatizados](https://github.com/IdnaReis/qa-saucedemo-manual-bdd-automacao/actions/workflows/testes.yml/badge.svg)](https://github.com/IdnaReis/qa-saucedemo-manual-bdd-automacao/actions/workflows/testes.yml)
+[![Testes automatizados](https://github.com/IdnaReis/qa-saucedemo-manual-bdd-automacao/actions/workflows/testes.yml/badge.svg?branch=main)](https://github.com/IdnaReis/qa-saucedemo-manual-bdd-automacao/actions/workflows/testes.yml)
 
-Projeto de testes manuais do e-commerce de prática [SauceDemo](https://www.saucedemo.com): planejamento, 15 casos de teste documentados, cenários em Gherkin, execução com evidências, **testes exploratórios com os 6 usuários do sistema** **14 bugs reportados** e **automação dos mesmos cenários Gherkin** com Playwright + Python.
+Projeto de testes manuais do e-commerce de prática [SauceDemo](https://www.saucedemo.com): planejamento, 15 casos de teste documentados, cenários em Gherkin, execução com evidências, **testes exploratórios com os 6 usuários do sistema**,**14 bugs reportados** e **automação dos mesmos cenários Gherkin** com Playwright + Python.
 
 **Ciclo completo:** teste manual → documentação em BDD → automação dos mesmos `.feature` → regressão dos bugs → CI no GitHub Actions.
 
@@ -102,7 +102,7 @@ A cada push, o **GitHub Actions** roda toda a suíte e publica o relatório como
 ## 📂 Estrutura
 
 ```
-qa-saucedemo-manual-bdd-automacao/
+- 🧾 [qa-saucedemo-manual-bdd-automacao](https://github.com/IdnaReis/qa-saucedemo-manual-bdd-automacao) — Ciclo completo de QA no SauceDemo: 15 casos manuais, 14 bugs com evidências, BDD/Gherkin automatizado com Playwright + Python e CI/
 ├── docs/plano-de-testes.md          # Objetivo, escopo, estratégia, critérios
 ├── casos-de-teste/casos-de-teste.md # 15 casos com passos e resultado esperado
 ├── bdd/                             # Cenários Gherkin por módulo + regressão dos bugs
